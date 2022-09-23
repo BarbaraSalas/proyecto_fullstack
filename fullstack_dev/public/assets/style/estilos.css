@@ -1,0 +1,279 @@
+body,
+p,
+section,
+article,
+div,
+nav,
+footer,
+ul,
+li,
+ol,
+h1,
+h2,
+h3 {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Cabin', sans-serif;
+}
+
+.ricomida {
+	margin-left: 150px;
+}
+
+.rico-nav {
+	background-color: #373a3c;
+	min-height: 150px;
+	max-width: none;
+	margin-bottom: 14px;
+}
+
+.rico-elementos {
+	font-style: 'Cabin';
+	font-size: 16px;
+	line-height: 24px;
+	margin-right: 154px;
+	color: white;
+}
+
+.linea {
+	width: 246px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #000000;
+	size: 1px;
+}
+
+.linea-dos{
+	display: none;
+}
+
+
+
+
+.pizza-receta-titulo {
+	text-align: center;
+	font-size: 25px;
+	margin-top: 13px;
+	font-weight: bold;
+	color: #373a3c;
+}
+
+.tiempo-porciones {
+	color: #373a3c;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 21px;
+}
+
+
+.carrusel-img{
+	width: 233px;
+	height: 170px;
+}
+
+.ingredientes-pizza {
+	font-weight: 400;
+	color: #373a3c;
+	line-height: 30px;
+	text-align: left;
+	width: 246px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 16px;
+}
+
+.otras-recetas-titulo {
+	color: #373a3c;
+	font-size: 17px;
+	font-weight: 700;
+	line-height: 20px;
+}
+.recetas-relacionadas-titulo {
+	text-align: center;
+	font-size: 25px;
+	margin-top: 13px;
+	font-weight: bold;
+	color: #373a3c;
+	margin-bottom: 38px;
+}
+.card {
+	height: 364px;
+	width: 246px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+.card-text {
+	color: #373a3c;
+	font-size: 16px;
+	line-height: 24px;
+}
+.boton{
+	margin-bottom: 51px;
+}
+
+.newsletter{
+	height: 537px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	background-color: #DC3545;
+	margin-top: 80px;
+}
+
+.footer-oscuro{
+	background-color: #373A3C;
+	height: 125px;
+
+}
+.suscribete{
+	margin-top: 95px;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 37px;
+	text-align: center;
+	color: white;
+
+}
+
+.obten-recetas{
+	margin-top: 7px;
+	margin-bottom: 160px;
+	margin-right: auto;
+	margin-right: auto;
+	color: white;
+	font-size: 20px;
+	line-height: 25px;
+	text-align: center;
+}
+.newsletter{
+	height: 448px;
+	width: 100%;
+	background-color: #DC3545;
+	margin-top: 60px;
+}
+.enviar-por-correo{
+    margin-right: 24px;
+    margin-top: 24px;
+}
+/*Breakpoint*/
+@media (min-width: 992px) {
+	.rico-pizza-img {
+		width: 482px;
+		height: 384px;
+		padding-top: 24px;
+		margin-left: 50px;
+	}
+
+	.ricomida {
+		margin-left: 150px;
+	}
+
+	.pizza-receta-titulo {
+		padding: 116px, 207px, 0, 16px;
+		text-align: left;
+		width: 425px;
+		height: 201px;
+		font-weight: 700;
+		font-size: 40px;
+		color: #373a3c;
+	}
+
+
+
+	
+
+	.linea {
+		display: none;
+	}
+
+	.linea-dos {
+		color: #000000;
+		width: 980px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.ingredientes-pizza {
+		font-weight: 400;
+		color: #373a3c;
+		line-height: 30px;
+		text-align: left;
+		width: 380px;
+
+		font-size: 16px;
+	}
+	.card {
+		height: 364px;
+		width: 316px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+	}
+	.enviar-por-correo{
+		margin-right: 24px;
+        margin-top: 24px;
+	}
+	.linea-tres{
+		color: #373A3C;
+		min-width: 450px;
+		text-align: left;
+	}
+
+	.tiempo-porciones{
+		text-align: left;
+		margin-bottom: 24px;
+
+	}
+
+    .titulorojo{
+        color: red;
+    }
+
+	.newsletter{
+		height: 537px;
+		width: 100%;
+		background-color: #DC3545;
+		margin-top: 80px;
+	}
+
+	.suscribete{
+		margin-top: 150px;
+		margin-left: 150px;
+		margin-right: 150px;
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 49px;
+		text-align: center;
+		color: white;
+
+	}
+
+	.obten-recetas{
+		margin: 7px 50px 276px 50px;
+		color: white;
+		font-size: 30px;
+		line-height: 38px;
+		text-align: center;
+	}
+
+	.footer-oscuro{
+		background-color: #373A3C;
+		height: 125px;
+	
+	}
+
+	.ricomida-dos{
+		align-items: center;
+		margin-bottom: 38px;
+	}
+	
+}

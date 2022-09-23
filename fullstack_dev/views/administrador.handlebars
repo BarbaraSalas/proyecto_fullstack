@@ -1,0 +1,177 @@
+
+
+    <nav class="navbar navbar-expand-sm navbar-dark rico-nav ">
+        <div class="container-fluid">
+
+            <a class="navbar-brand " href="#">
+
+                <p>Profesores en línea</p>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse justify-content-end rico-elementos" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link text-white" href="#recetas">Pruebas</a>
+                        <a class="nav-link text-white" href="#nosotros">Planificaciones</a>
+                        <a class="nav-link disabled text-white" href="#contacto">Contacto</a>
+                    </div>
+                </div>
+
+
+
+        </div>
+    </nav>
+
+
+  
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 ">
+
+                <h1 class="pizza-receta-titulo">Administrador</h1>
+
+           
+    <div class="py-4">
+       
+        <hr class="w-50" />
+  
+        <table class="table w-50 m-auto">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              
+              <th scope="col">Nombre</th>
+              
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo">
+            {{#each usuarios}}
+      <tr>
+        <td>{{@index}}</td>
+       
+        <td>{{this.nombre}}</td>
+       <td><input type="checkbox" {{#if this.is_approved}} checked {{/if}} onclick="changeStatus({{this.id}}, this)">
+        </td>
+      </tr>
+  
+      {{/each}}
+  
+          </tbody>
+        </table>
+      </div>
+
+                
+                
+
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-12 ">
+
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 ingredientes-pizza">
+
+                </div>
+
+
+                <div class="col-12 col-sm-6 ingredientes-pizza ">
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        <div class="container">
+            <div class="row">
+
+
+
+            </div>
+        </div>
+        <footer class="bg-light text-center text-lg-start">
+
+            <div class="container p-4 newsletter">
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <h5 class="text-uppercase suscribete" id="contacto">Profesores en línea</h5>
+
+                        <p class="obten-recetas">
+                            para planificaciones y pruebas</p>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="text-center p-3 footer-oscuro">
+
+
+            </div>
+
+        </footer>
+
+      
+
+<script>
+    const changeStatus = async (id, e) =>{
+       const is_approved = e.checked    
+      try{         
+      await axios.put("/administrador", {
+        id,
+        is_approved
+      })
+      alert(is_approved ? "Profesor aprobado para subir documentos" : "Profesor desaprobado para subir documentos")
+    }
+       catch ({ response}){
+      const { data } = response
+      const { error } = data
+      alert(error)
+    }
+    }
+  
+  </script>
+  
+
