@@ -33,32 +33,32 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-6 ">
+            <div class="col-12 col-sm-6 columna"  >
 
                 <h1 class="pizza-receta-titulo">Crear cuenta</h1>
 
                 <form action="/registro" method="POST">
 
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-12">
                         <label for="validationDefault01" class="form-label">Nombre</label>
                         <input class="form-control m-auto" name="nombre" value="{{nombre}}" type="text">
                     </div>
 
-                    <div class="col-12 col-md-4">
-                        <label for="staticEmail" class="col-12 col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input class="form-control m-auto" name="email" value="{{email}}" type="text">
-                        </div>
+                    <div class="col-12 col-md-12">
+                        <label for="staticEmail" class="col-12 col-md-">Email</label>
+                        
+                            <input class="form-control m-auto " name="email" value="{{email}}" type="text">
+                        
                     </div>
 
-                    <div class="col-12 col-md-4">
-                    <label class="col-12 col-sm-2 col-form-label">Contraseña</label>
-                    <div class="col-sm-10">
+                    <div class="col-12 col-md-12">
+                    <label class=" col-form-label">Contraseña</label>
+                    
                         <input class="form-control m-auto" name="password" type="password">
-                    </div>
+                   
                     </div>
 
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-12">
                         <label for="validationDefault04" class="form-label">Rol</label>
                         <select class="form-select" id="validationDefault04" required>
                             <option selected disabled value="{{usuario}}">Usuario</option>

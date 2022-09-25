@@ -25,7 +25,7 @@ body {
 
 .rico-nav {
 	background-color: #373a3c;
-	min-height: 150px;
+	min-height: 50px;
 	max-width: none;
 	margin-bottom: 14px;
 }
@@ -164,8 +164,19 @@ body {
     margin-right: 24px;
     margin-top: 24px;
 }
+
+.campo-input{
+	width: 300px;
+}
+
+.columna {
+	margin: auto;
+}
 /*Breakpoint*/
 @media (min-width: 992px) {
+	.columna {
+		margin: auto;
+	}
 	.rico-pizza-img {
 		width: 482px;
 		height: 384px;
