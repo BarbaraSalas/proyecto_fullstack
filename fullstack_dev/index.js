@@ -127,24 +127,29 @@ app.get('/ingresar', (req, res) => {
     res.render('ingresar');
     
 } );
+
 app.post('/ingresar', (req, res) => {
-    const {documento} = req.body;
-    
-    if (!documento) {
-        return res.status(400).json({message: 'ingrese un documento válido'});
-    }else{
    
-    let previos = [];
-    const alreadyExists = fs.existsSync('documento.json');
-    if(alreadyExists) {
-        previos = JSON.parse(fs.readFileSync('documento.json', 'utf-8'));
+        const {documento} = req.body;
+        
+        if (!documento) {
+            return res.status(400).json({message: 'ingrese datos válidos'});
+        }else{
+       
+       
+        let previos = [];
+        const alreadyExists = fs.existsSync('documentos.json');
+        if(alreadyExists) {
+            previos = JSON.parse(fs.readFileSync('documentos.json', 'utf-8'));
+        }
+        
+        const documentos = [...previos, {  contenido: documento}];
+        
+        const payload = JSON.stringify([...documentos]);
+        fs.writeFileSync('documentos.json', payload, 'utf-8');
+        res.status(201).json({message: 'done'});
+        
     }
-    const documentos = [...previos];
+        
+    });
     
-    const payload = JSON.stringify([...documentos]);
-    fs.writeFileSync('documentos.json', payload, 'utf-8');
-    res.status(201).json({message: 'Ingresado', documento});
-    
-}
-    
-});

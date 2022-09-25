@@ -169,6 +169,11 @@ body {
 	width: 300px;
 }
 
+.documento-input {
+	margin-top: 30px;
+	width: 300px;
+	height: 250px;
+}
 .columna {
 	margin: auto;
 }

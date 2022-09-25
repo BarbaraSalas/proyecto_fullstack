@@ -27,51 +27,35 @@
     </nav>
 
 
-    <hr class="linea">
+   
 
 
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-6 ">
+            <div class="col-12 col-sm-12 columna ">
 
                 <h1 class="pizza-receta-titulo">Ingresa tu documento</h1>
-
-                <input id="ingresar-documento" placeholder="Escriba aquí">
+</div>
+<div class="col-12 col-md-12">
+                <input id="ingresar-documento" placeholder="Escriba aquí" class="form-control m-auto documento-input" type="text">
             
-              <button id="btn-ingresar" class="btn btn-light btn btn-outline-secondary enviar-por-correo boton">Ingresar</button>
+              <button id="btn-ingresar" style="margin-top:20px" class="btn btn-light btn btn-outline-secondary enviar-por-correo boton columna">Ingresar</button>
 
                 
+</div>
 
 
 
 
-
-            </div>
+            
 
         </div>
 
     </div>
 
     <div class="container ">
-        <div class="row">
-            <div class="col-12 ">
-
-            </div>
-        </div>
-        <hr class="linea-dos">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-6 ingredientes-pizza">
-
-                </div>
-
-
-                <div class="col-12 col-sm-6 ingredientes-pizza ">
-
-                </div>
-
-            </div>
-        </div>
+        
+        
 
 
 
@@ -90,13 +74,7 @@
 
 
 
-        <div class="container">
-            <div class="row">
-
-
-
-            </div>
-        </div>
+        
         <footer class="bg-light text-center text-lg-start">
 
             <div class="container p-4 newsletter">
@@ -123,5 +101,29 @@
             </div>
 
         </footer>
+        <script>
 
+      const anadirDocumento = async (documento) => {
+      const res = await fetch('http://localhost:4000/ingresar', {
+        method: 'POST',
+        body: JSON.stringify({ documento }),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+      const body = await res.json();
+      if (!documento) (err) => {
+        return res.status(400).json({ message: 'ingrese datos válidos' })
+      }; else {
+
+        alert('agregado');
+
+      }
+    }
+
+    const inputDocumento = document.getElementById('ingresar-documento');
+    const btnAnadirDocumento = document.getElementById('btn-ingresar');
+    btnAnadirDocumento.addEventListener('click', () => anadirDocumento(inputDocumento.value));
+</script>
 
