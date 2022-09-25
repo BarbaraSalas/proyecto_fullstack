@@ -21,6 +21,14 @@ async function getUsuarios(){
     return result.rows;
 }
 
+async function getUsuario (email, password) {
+    const result = await pool.query(
+        `select * from profesores where email = '${email}' and password = '${password}'`
+    );
+   // console.log(result.rows[0])
+    return result.rows[0];
+}
+
 async function setUsuarioEstado(id, is_approved) {
     const result = await pool.query(
         `UPDATE profesores SET is_approved = ${is_approved} WHERE id = ${id} RETURNING *`
@@ -32,5 +40,6 @@ async function setUsuarioEstado(id, is_approved) {
 module.exports = {
     nuevoUsuario,
     setUsuarioEstado,
-    getUsuarios
+    getUsuarios,
+    getUsuario
 }

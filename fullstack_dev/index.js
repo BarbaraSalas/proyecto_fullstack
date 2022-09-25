@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 const secretKey = 'Barbara123';
-const { nuevoUsuario, setUsuarioEstado, getUsuarios} = require('./consultas.js');
+const { nuevoUsuario, setUsuarioEstado, getUsuarios, getUsuario} = require('./consultas.js');
 const { send } = require('process');
 const fs = require('fs');
 
@@ -80,7 +80,7 @@ app.post('/verify', async function (req, res) {
     //console.log(req.body)
     const user = await getUsuario(email, password);
     if (user) {
-        if (user.estado) {
+        if (user.is_approved) {
             const token = jwt.sign(
                 {
                     exp: Math.floor(Date.now() / 1000) + 180,
@@ -118,7 +118,9 @@ app.get('/datos',  (req, res) => {
                 token_error: err.message,
             })
         
-        : res.render('datos', {token});
+        :
+       
+         res.render('datos', {token});
     });
 });
 app.get('/ingresar', (req, res) => {

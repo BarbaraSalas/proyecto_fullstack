@@ -28,29 +28,29 @@
     </nav>
 
 
-    <hr class="linea">
+  
 
 
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-6 ">
+            <div class="col-12 col-sm-6 columna">
 
                 <h1 class="pizza-receta-titulo">Iniciar sesión</h1>
 
                 <form>
 
-                    <div class="col-12 col-md-4">
-                        <label for="staticEmail" class="col-12 col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
+                    <div class="col-12 col-md-12">
+                        <label for="staticEmail" class="col-12 col-md-12 col-form-label">Email</label>
+                        
                             <input class="form-control m-auto" type="text" id="email">
-                        </div>
+                        
                     </div>
 
-                    <div class="col-12 col-md-4">
-                        <label class="col-12 col-sm-2 col-form-label">Contraseña</label>
-                        <div class="col-sm-10">
+                    <div class="col-12 col-md-12">
+                        <label class="col-12 col-md-12 col-form-label">Contraseña</label>
+                        
                             <input class="form-control m-auto" type="password" id="password">
-                        </div>
+                        
                     </div>
 
                     <div class="col-12">
@@ -158,7 +158,7 @@
       try{
         const { data: token } = await axios.post('/verify', payload)
         alert(`autenticado y autorizado`)
-        //aqui esta el problema, me da un token y me verifica pero nunca me redirecciona a esta url
+        console.log(token)
         window.location.href = (`/datos?token=${token}`)
       }
       catch({response}) {
@@ -167,5 +167,10 @@
         alert(error)
       }
     }
+    
+    //document.getElementById("enviarPorCorreo").onclick = function () {
+   //     location.href = "/ingresar";
+    //};
+
   </script>
 
